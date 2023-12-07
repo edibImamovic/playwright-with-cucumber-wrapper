@@ -31,13 +31,16 @@ export class LoginPage {
         return this.page.getByText('Login');
     }
 
+    protected get productTextEle() {
+        return this.page.locator('[class="title"]');
+    }
 
     // Method to open the desired page
     async open() {
         await this.page.goto(`${config.baseUrl}`);
     }
 
-    // Method to open the desired page
+    // Methods for test validation
     async logoText() {
         return this.logoTextEle.textContent();
     }
@@ -47,6 +50,10 @@ export class LoginPage {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         return this.loginButtonEle.click();
+    }
+
+    async productText() {
+        return this.productTextEle.textContent();
     }
 
 
