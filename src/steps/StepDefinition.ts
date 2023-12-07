@@ -27,6 +27,8 @@ class StepDefinition {
         await this.mainPage.loginPage.enterUsernameAndPassword(username, password)
     }
 
-
-
+    @Then('I should be on the inventory page with {string}')
+    async productTextValidation(products: string) {
+        expect(await this.mainPage.loginPage.productText()).toEqual(products)
+    }
 }
