@@ -26,7 +26,4 @@ class StepDefinition {
     async loginWithUsernameAndPassword(username: string, password: string) {
         await this.mainPage.loginPage.enterUsernameAndPassword(username, password)
     }
-
-
-
 }
